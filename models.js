@@ -27,4 +27,4 @@ blogPostSchema.methods.apiRepr = function(){
 
 const Post = mongoose.model('Post', blogPostSchema)
 
-module.exports = {Restaurant}
+module.exports = {Post}
