@@ -28,7 +28,7 @@ app.get('/posts', (req, res) => {
 
 app.get('/posts/:id', (req, res)=>{
   Post
-    .findByID(req.params.id)
+    .findById(req.params.id)
     .then(post => res.json(post.apiRepr()))
     .catch(err =>{
       console.error(err)
@@ -85,7 +85,7 @@ app.put('/posts/:id', (req, res) =>{
     .catch(err => res.status(500).json({message: 'Internal server error'}))
 })
 
-app.delete('/restaurants/:id', (req, res) =>{
+app.delete('/posts/:id', (req, res) =>{
   Post
     .findByIdAndRemove(req.params.id)
     .exec()
